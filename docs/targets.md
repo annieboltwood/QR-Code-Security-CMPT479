@@ -72,12 +72,6 @@ We selected targets based on the following principles:
 
 ---
 
-## Note on iOS Camera
-
-The native iOS Camera app is not included as a primary target in this study. Our testing environment is built around the Mac + Android Studio emulator workflow, and adding iOS would require a physical iPhone (the iOS Simulator does not support camera-based QR scanning), which introduces significant additional setup overhead for a black-box testing methodology. If a team member later has access to a physical iPhone, iOS Camera could be incorporated as an optional extension to the study, providing a useful cross-platform comparison point.
-
----
-
 ## Summary Table
 
 | # | Target                              | Type                  | Platform        |
