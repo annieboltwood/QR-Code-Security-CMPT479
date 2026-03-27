@@ -18,7 +18,7 @@ leak data to third parties, and properly validate encoded content.
 - `data/` — scan results, network captures, and screenshots
 - `docs/` — setup guides and testing logs
 - `paper/` — final report
-
+```
 qr-security-study/
 ├── payloads/
 ├── tools/
@@ -29,6 +29,7 @@ qr-security-study/
 ├── paper/
 ├── .gitignore
 └── README.md
+```
 
 ## Setup
 See `docs/setup.md` for instructions on configuring mitmproxy and Wireshark.
