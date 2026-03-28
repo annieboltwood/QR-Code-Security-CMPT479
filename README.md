@@ -37,4 +37,23 @@ See `docs/setup.md` for instructions on configuring mitmproxy and Wireshark.
 ## Target Apps
 See `docs/targets.md` for the list of apps and libraries we tested.
 
+## Generating Test Payloads
+
+Install the dependency:
+
+```bash
+pip install qrcode[pil]
+```
+
+Run the generator:
+
+```bash
+python tools/payload_gen.py
+```
+
+This writes QR code PNG images into `payloads/` (organised by category) and
+produces `payloads/manifest.csv` describing every generated image.  All
+payloads use safe, reserved, or synthetic content — no real malicious
+infrastructure is referenced.
+
 
