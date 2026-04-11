@@ -1,83 +1,37 @@
-# Testing Targets — QR Code Scanner Security Study
+# Testing Targets
 
-This document defines the five targets selected for our black-box security evaluation of Android QR code scanners. Each target was chosen deliberately to give the study broad coverage across scanner types, implementation approaches, and real-world usage patterns.
+The final study uses exactly three Android QR scanner applications. This keeps
+the project practical for a short deadline while still providing meaningful
+contrast between mainstream, open-source/privacy-oriented, and
+security-positioned scanner behavior.
 
----
+## Target Set
 
-## Selection Criteria
+### QR & Barcode Scanner (Gamma Play)
 
-We selected targets based on the following principles:
+- Type: mainstream standalone Android scanner
+- Justification: serves as the baseline for how a popular dedicated scanner
+  presents destinations, asks for confirmation, and hands off decoded payloads
+  in a typical consumer app workflow
 
-- **Mix of popular and open-source**: We include scanners with large real-world user bases alongside widely used open-source libraries, so findings are relevant to both end users and developers.
-- **Android-emulator compatibility**: All targets can be tested within our Mac + Android Studio (Pixel 6) workflow without requiring physical hardware or additional platform setup.
-- **Variety in implementation style**: Targets differ in how they are built and how they handle QR content, allowing us to compare behavior across first-party, third-party, and library-based systems.
-- **Diversity in trust model**: By including a Google-integrated scanner, independent third-party apps, and bare libraries, we can assess how the scanner's origin and integration level affects its security posture.
+### Binary Eye
 
----
+- Type: open-source and privacy-oriented Android scanner
+- Justification: provides a useful comparison point for whether a scanner with a
+  more privacy-conscious and transparent design philosophy behaves differently
+  from a mainstream Play Store scanner
 
-## Targets
+### Trend Micro QR Scanner
 
-### 1. Google Lens / Google App (Android)
+- Type: security-oriented Android scanner
+- Justification: provides an explicit security-focused comparison target because
+  it markets dangerous-link and safe-browsing style protection, making it
+  relevant to warning, preview, and handoff behavior
 
-| Field    | Detail                      |
-|----------|-----------------------------|
-| Type     | Mainstream / first-party app |
-| Platform | Android                     |
+## Why These Three
 
-**Justification:** Google Lens is deeply integrated into Android and represents how a large segment of users encounter QR scanning in practice. As a first-party Google product, it is worth evaluating whether it applies stricter URL validation or user warnings compared to independent apps. Its behavior sets a useful baseline for the study.
-
----
-
-### 2. QR & Barcode Scanner by TeaCapps
-
-| Field    | Detail                        |
-|----------|-------------------------------|
-| Type     | Standalone third-party app    |
-| Platform | Android (Google Play)         |
-
-**Justification:** TeaCapps' scanner is one of the most widely installed dedicated QR scanner apps on the Play Store, with tens of millions of installs. Its large install base makes it a high-priority target — any security gaps affect a significant real-world population. It also provides a comparison point against Google's integrated scanner.
-
----
-
-### 3. QR & Barcode Scanner by Gamma Play
-
-| Field    | Detail                        |
-|----------|-------------------------------|
-| Type     | Standalone third-party app    |
-| Platform | Android (Google Play)         |
-
-**Justification:** Gamma Play's scanner is another high-popularity standalone app. Including two independent third-party scanners allows us to compare behavior between apps of the same category, identifying whether differences in URL handling, auto-open behavior, or data transmission are app-specific choices or patterns shared across this class of scanner.
-
----
-
-### 4. ZXing ("Zebra Crossing")
-
-| Field    | Detail                        |
-|----------|-------------------------------|
-| Type     | Open-source library / app     |
-| Platform | Android                       |
-
-**Justification:** ZXing is the most widely used open-source barcode and QR decoding library in the Android ecosystem. Many third-party apps are built on top of it. Evaluating ZXing directly — via its reference Android app — lets us assess baseline library behavior before higher-level application logic is applied. It is also a relevant target because vulnerabilities in ZXing can have downstream effects on any app that depends on it.
-
----
-
-### 5. ZBar
-
-| Field    | Detail                        |
-|----------|-------------------------------|
-| Type     | Open-source library           |
-| Platform | Cross-platform (Android-accessible via wrapper) |
-
-**Justification:** ZBar is an alternative open-source barcode reading library with its own parsing implementation. Including it alongside ZXing allows us to compare how two different decoding engines handle malformed, oversized, or adversarially crafted QR payloads. Differences in how each library processes encoded content may reveal implementation-specific weaknesses.
-
----
-
-## Summary Table
-
-| # | Target                              | Type                  | Platform        |
-|---|-------------------------------------|-----------------------|-----------------|
-| 1 | Google Lens / Google App            | First-party app       | Android         |
-| 2 | QR & Barcode Scanner (TeaCapps)     | Third-party app       | Android         |
-| 3 | QR & Barcode Scanner (Gamma Play)   | Third-party app       | Android         |
-| 4 | ZXing                               | Open-source lib / app | Android         |
-| 5 | ZBar                                | Open-source library   | Cross-platform  |
+This target set is intentionally small because the team has roughly one day of
+effort remaining. The three selected apps are easy to install and test in an
+Android emulator, and together they offer enough contrast to support a credible
+black-box comparison without expanding the study beyond what can be defended in
+the final paper.
