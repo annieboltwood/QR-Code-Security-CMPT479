@@ -21,12 +21,12 @@ security-positioned scanner behavior.
   more privacy-conscious and transparent design philosophy behaves differently
   from a mainstream Play Store scanner
 
-### Trend Micro QR Scanner
+### QR Code & Barcode Scanner Plus
 
-- Type: security-oriented Android scanner
-- Justification: provides an explicit security-focused comparison target because
-  it markets dangerous-link and safe-browsing style protection, making it
-  relevant to warning, preview, and handoff behavior
+- Type: mainstream third-party Android scanner
+- Justification: provides a practical additional standalone comparison target
+  for observing how another consumer-oriented scanner handles destination
+  preview, confirmation, and payload handoff under the same test corpus
 
 ## Why These Three
 

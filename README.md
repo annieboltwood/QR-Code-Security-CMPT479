@@ -28,8 +28,9 @@ The fixed Android targets for the final project scope are:
 
 - **QR & Barcode Scanner (Gamma Play)** — mainstream standalone scanner baseline
 - **Binary Eye** — open-source and privacy-oriented comparison target
-- **Trend Micro QR Scanner** — security-oriented comparison target with
-  dangerous-link positioning
+- **QR Code & Barcode Scanner Plus** — practical third-party comparison target
+  that adds another easy-to-test standalone scanner for comparison of preview,
+  confirmation, and handoff behavior
 
 This target set was chosen because it is easy to test under a short deadline
 while still giving useful behavioral contrast.
