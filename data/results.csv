@@ -1,1 +1,2 @@
 target,payload_id,category,full_destination_visible,warning_shown,confirmation_required,auto_open,handoff_type,payload_handled_safely,third_party_traffic_observed,notes,screenshot_file,capture_file
+Gamma Play,PHISH_001,phishing_style_urls,yes,no,yes,no,in_app_browser_chrome_custom_tab,yes,unknown,"Decoded successfully, displayed full URL clearly, no warning shown, required user to tap Open, then opened in a Chrome-backed in-app browser / custom tab.","gamma_play_PHISH_001_result.png; gamma_play_PHISH_001_open.png; gamma_play_PHISH_001_menu.png",
