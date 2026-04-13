@@ -11,8 +11,8 @@ QR payload is decoded.
 
 ## Team
 
-- Jedidiah Akinola
 - Annie Boltwood
+- Jedidiah Akinola
 - Mahim Chaudhary
 
 ## Study Scope
