@@ -1,6 +1,6 @@
 # Testing Targets
 
-The final study uses exactly three Android QR scanner applications. This keeps
+This study uses exactly three Android QR scanner applications. This keeps
 the project practical for a short deadline while still providing meaningful
 contrast between mainstream, open-source/privacy-oriented, and
 security-positioned scanner behavior.
@@ -30,8 +30,6 @@ security-positioned scanner behavior.
 
 ## Why These Three
 
-This target set is intentionally small because the team has roughly one day of
-effort remaining. The three selected apps are easy to install and test in an
+The three selected apps are easy to install and test in an
 Android emulator, and together they offer enough contrast to support a credible
-black-box comparison without expanding the study beyond what can be defended in
-the final paper.
+black-box comparison 

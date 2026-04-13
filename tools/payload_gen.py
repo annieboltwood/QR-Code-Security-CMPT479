@@ -1,5 +1,5 @@
 """
-Generate the final QR payload corpus for the CMPT 479 QR scanner study.
+Generate the final QR payload corpus .
 
 The study uses a small, deterministic set of safe payloads that probe how QR
 scanner apps decode, display, validate, and hand off suspicious-looking
